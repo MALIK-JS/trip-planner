@@ -17,7 +17,7 @@ const getLocalStorage = () => {
 export const dataContext = React.createContext();
 const obj = { id: 0, value: "active_menu_link" };
 const Dashboard = () => {
-  const { isAuthenticated, loginWithRedirect, logout, user, isLoading } =
+  const { isAuthenticated, logout, user } =
     useAuth0();
   const isUser = isAuthenticated && user;
 

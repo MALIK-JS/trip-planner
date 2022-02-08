@@ -27,7 +27,6 @@ export default function Form({ setTrips, trips, isEditing, setIsEditing }) {
     e.preventDefault();
 
     //handle editing
-    const newItem = isEditing.item[0];
     if (isEditing.value) {
       const output = trips.map((trip) => {
         if (trip.id === isEditing.item[0].id) {

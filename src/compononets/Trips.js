@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React from "react";
 import { Link } from "react-router-dom";
 
 function Trips({
@@ -19,7 +19,7 @@ function Trips({
         <p>YOUR TRIP TO: </p>
         <h3>{to}</h3>
       </div>
-      <img className="trip__img" src={destfalg} />
+      <img className="trip__img" src={destfalg} alt="country-flag" />
       <div className="trip__data">
         <p className="trip__row">{`FROM :${godate} TO:${backdate}`}</p>
         <p className="trip__row">
@@ -42,7 +42,7 @@ function Trips({
         >
           DELETE
         </button>
-        <Link to={`/trips/${id}`} >
+        <Link to={`/trips/${id}`}>
           <button className="btn btn__info">PLANNING</button>
         </Link>
       </div>
