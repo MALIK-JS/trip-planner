@@ -3,6 +3,7 @@ import Cards from "../compononets/Cards";
 import Chart from "../compononets/Chart";
 import Sidebar from "../compononets/Sidebar";
 import React, { useState } from "react";
+import { useAuth0 } from "@auth0/auth0-react";
 
 const getLocalStorage = () => {
   let list = localStorage.getItem("list");
@@ -14,20 +15,29 @@ const getLocalStorage = () => {
 };
 
 export const dataContext = React.createContext();
-const obj = { id : 0, value:"active_menu_link" };
+const obj = { id: 0, value: "active_menu_link" };
 const Dashboard = () => {
+  const { isAuthenticated, loginWithRedirect, logout, user, isLoading } =
+    useAuth0();
+
+  const isUser = isAuthenticated && user;
+
   const [trips, setTrips] = useState(getLocalStorage());
   return (
     <dataContext.Provider value={trips}>
+      <button onClick={loginWithRedirect}>LOGIN</button>
+      <button onClick={() => logout({ returnTo: window.location.origin })}>
+        Log Out
+      </button>
       <div className="container">
         <main>
           <div className="main__container">
-            <Greeting />
+            <Greeting user={user} isUser={isUser} />
             <Cards />
             <Chart />
           </div>
         </main>
-        <Sidebar {...obj}/>
+        <Sidebar {...obj} />
       </div>
     </dataContext.Provider>
   );

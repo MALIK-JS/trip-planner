@@ -38,7 +38,6 @@ function Chart() {
 
   const allInputs = useContext(dataContext)
   const lastInput = allInputs.at(-1);
-  console.log('malik',allInputs.map((country) => country.to))
   const labels = allInputs.map((country) => country.to);
   const data = {
     labels,
