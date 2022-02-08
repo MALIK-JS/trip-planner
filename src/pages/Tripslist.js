@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import Sidebar from "../compononets/Sidebar";
 import Form from "../compononets/Form";
 import Trips from "../compononets/Trips";
-import Alert from "../compononets/Alert";
+
 
 const getLocalStorage = () => {
   let list = localStorage.getItem("list");
@@ -14,7 +14,7 @@ const getLocalStorage = () => {
 };
 const Tripslist = () => {
   const [trips, setTrips] = useState(getLocalStorage());
-  const [alert, setAlert] = useState({});
+  
   const [isEditing, setIsEditing] = useState({ value: false, item: {} });
 
   useEffect(() => {
@@ -29,10 +29,12 @@ const Tripslist = () => {
     const specificItem = trips.filter((trip) => trip.id === id);
     setIsEditing({ value: true, item: specificItem });
   };
+
+  const obj = { id : 1, value:"active_menu_link" };
   return (
     <div className="container">
       <main>
-        <Alert />
+        
         <Form
           setTrips={setTrips}
           trips={trips}
@@ -51,7 +53,7 @@ const Tripslist = () => {
         </section>
       </main>
 
-      <Sidebar />
+      <Sidebar {...obj} />
     </div>
   );
 };

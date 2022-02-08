@@ -21,7 +21,6 @@ function Trips({
       <img className="trip__img" src={destfalg} />
       <div className="trip__data">
         <p className="trip__row">
-          <span></span>
           {`FROM :${godate} TO:${backdate}`}
         </p>
         <p className="trip__row">

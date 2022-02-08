@@ -6,6 +6,7 @@ function Countryfrom__({ setFromWhere, value }) {
       placeholder="From"
       id="country"
       name="country"
+      value={value}
       onChange={(e) => setFromWhere(e.target.value)}
     >
       <option value="">{value}</option>

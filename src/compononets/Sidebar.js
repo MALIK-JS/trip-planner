@@ -1,30 +1,26 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-function Sidebar() {
+function Sidebar({ id, value }) {
   return (
     <div id="sidebar">
       <div className="sidebar__title">
-        <div className="sidebar__img">
-          <img src="assets/logo.png" alt="logo" />
-          <h1>Codersbite</h1>
-        </div>
+        <h1>TRIP PLANNER</h1>
       </div>
 
       <div className="sidebar__menu">
-        <div className="sidebar__link active_menu_link">
-          <i className="fa fa-home"></i>
+        <div
+          className={id ? "sidebar__link" : "sidebar__link active_menu_link"}
+        >
           <Link to="/">Dashboard</Link>
         </div>
 
         <div className="sidebar__menu">
-          <div className="sidebar__link">
-            <i className="fa fa-home"></i>
+          <div className={id ? "sidebar__link active_menu_link" : "sidebar__link"}>
             <Link to="/trips">TRIPS</Link>
           </div>
 
           <div className="sidebar__logout">
-            <i className="fa fa-power-off"></i>
             <a href="#">Log out</a>
           </div>
         </div>

@@ -1,10 +1,16 @@
 import React from "react";
+import { useEffect } from "react";
 
-function Alert() {
+function Alert({ msg, type, removeAlert, trips }) {
+  useEffect(() => {
+    const timeOutID = setTimeout(() => removeAlert(false), 3000);
+    return () => clearTimeout(timeOutID);
+  }, [trips]);
+
   return (
-    <div className="alert">
+    <div className={`alert ${type}`}>
       <div className="alert__message">
-        <p>THE TRIP HAS BEEN ADDED</p>
+        <p>{msg}</p>
       </div>
     </div>
   );

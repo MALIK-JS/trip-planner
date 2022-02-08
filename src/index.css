@@ -24,6 +24,7 @@ body {
 
 .text-title {
   color: #2e4a66;
+  
 }
 
 .text-lightblue {
@@ -162,18 +163,12 @@ main {
 }
 
 .sidebar__title {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  color: #f3f4f6;
+
+  text-align: center;
   margin-bottom: 30px;
-  /* color: #E85B6B; */
+  color: #E85B6B;
 }
 
-.sidebar__img {
-  display: flex;
-  align-items: center;
-}
 
 .sidebar__title > div > img {
   width: 75px;
@@ -254,10 +249,7 @@ main {
 @media only screen and (max-width: 978px) {
   .container {
     grid-template-columns: 1fr;
-    /* grid-template-rows: 0.2fr 2.2fr; */
-    grid-template-rows: 0.2fr 3fr;
     grid-template-areas:
-      "nav"
       "main";
   }
 
@@ -388,9 +380,6 @@ select {
   box-shadow: 0 5px 5px rgba(0, 0, 0, 0.2);
 }
 
-.trip__management {
-  text-align: center;
-}
 .btn__trip {
   width: 45%;
   margin: 0;
@@ -402,13 +391,25 @@ select {
   background-color: #e76f51;
 }
 
+.trip__management {
+  text-align: center;
+}
+
+
 .alert {
   width: 40%;
-  background: rgb(103, 252, 118);
   margin: 2rem auto;
   border-radius: 5px;
 }
+.Danger{
+  background: #d00000;
+  color: white;
+}
 
+.Success{
+  background: rgb(103, 252, 118);
+  
+}
 .alert__message {
   text-align: center;
   padding: 0.5rem;
