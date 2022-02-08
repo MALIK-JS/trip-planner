@@ -1,9 +1,10 @@
-import React from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { Link } from "react-router-dom";
 
-function Sidebar({ id, value }) {
+function Sidebar({ id, triggerLogout }) {
+ 
   return (
-    <div id="sidebar">
+    <div className="sidebar">
       <div className="sidebar__title">
         <h1>TRIP PLANNER</h1>
       </div>
@@ -12,18 +13,19 @@ function Sidebar({ id, value }) {
         <div
           className={id ? "sidebar__link" : "sidebar__link active_menu_link"}
         >
-          <Link to="/">Dashboard</Link>
+          <Link to="/">DASHBOARD</Link>
         </div>
 
-        <div className="sidebar__menu">
-          <div className={id ? "sidebar__link active_menu_link" : "sidebar__link"}>
-            <Link to="/trips">TRIPS</Link>
-          </div>
-
-          <div className="sidebar__logout">
-            <a href="#">Log out</a>
-          </div>
+        <div
+          className={id ? "sidebar__link active_menu_link" : "sidebar__link"}
+        >
+          <Link to="/trips">TRIPS</Link>
         </div>
+      </div>
+      <div className="sidebar__logout">
+        <button className="btn btn__logout" onClick={triggerLogout}>
+          LOG OUT
+        </button>
       </div>
     </div>
   );

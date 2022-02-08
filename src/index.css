@@ -10,6 +10,7 @@
 body {
   box-sizing: border-box;
   font-family: "Lato", sans-serif;
+  background: #f3f4f6;
 }
 
 .text-primary-p {
@@ -24,7 +25,6 @@ body {
 
 .text-title {
   color: #2e4a66;
-  
 }
 
 .text-lightblue {
@@ -43,6 +43,9 @@ body {
   color: #3b9668;
 }
 
+.text-white {
+  color: #fff;
+}
 .container {
   display: grid;
   height: 100vh;
@@ -51,7 +54,6 @@ body {
 }
 
 main {
-  background: #f3f4f6;
   grid-area: main;
   overflow-y: auto;
 }
@@ -153,22 +155,29 @@ main {
 
 /*  SIDEBAR STARTS HERE  */
 
-#sidebar {
+.sidebar {
   background: #020509;
   grid-area: sidebar;
   overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
   padding: 20px;
   -webkit-transition: all 0.5s;
+  align-items: center;
   transition: all 0.5s;
 }
 
+.sidebar__menu {
+  width: 100%;
+  text-align: center;
+  margin: 0 2rem;
+}
 .sidebar__title {
-
   text-align: center;
   margin-bottom: 30px;
-  color: #E85B6B;
+  color: #e85b6b;
 }
-
 
 .sidebar__title > div > img {
   width: 75px;
@@ -178,11 +187,6 @@ main {
 .sidebar__title > div > h1 {
   font-size: 18px;
   display: inline;
-}
-
-.sidebar__title > i {
-  font-size: 18px;
-  display: none;
 }
 
 .sidebar__menu > h2 {
@@ -249,8 +253,7 @@ main {
 @media only screen and (max-width: 978px) {
   .container {
     grid-template-columns: 1fr;
-    grid-template-areas:
-      "main";
+    grid-template-areas: "main";
   }
 
   #sidebar {
@@ -391,24 +394,28 @@ select {
   background-color: #e76f51;
 }
 
+.btn__logout {
+  background: transparent;
+  color: #ae2012;
+  border: 2px solid #ae2012;
+}
+
 .trip__management {
   text-align: center;
 }
-
 
 .alert {
   width: 40%;
   margin: 2rem auto;
   border-radius: 5px;
 }
-.Danger{
+.Danger {
   background: #d00000;
   color: white;
 }
 
-.Success{
+.Success {
   background: rgb(103, 252, 118);
-  
 }
 .alert__message {
   text-align: center;
@@ -419,4 +426,38 @@ select {
   letter-spacing: 1.5px;
   color: black;
   font-weight: 500;
+}
+
+.navbar {
+  height: 25vh;
+  background-color: #3b3b3b;
+  box-shadow: 0 5px 5px rgba(0, 0, 0, 0.2);
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  text-align: center;
+}
+
+.navbar h3 {
+  line-height: 1.7;
+}
+
+.budget {
+  padding: 1rem 3rem;
+  background-color: #2a9d8f;
+  border-radius: 50px;
+}
+
+.budget p {
+  font-size: 1rem;
+  font-weight: 400;
+  letter-spacing: 0.1rem;
+}
+
+.budget p span {
+  font-weight: 700;
+  font-size: 1.2rem;
+}
+.btn___planning{
+  text-decoration: none;
 }

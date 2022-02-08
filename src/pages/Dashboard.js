@@ -19,16 +19,16 @@ const obj = { id: 0, value: "active_menu_link" };
 const Dashboard = () => {
   const { isAuthenticated, loginWithRedirect, logout, user, isLoading } =
     useAuth0();
-
   const isUser = isAuthenticated && user;
+
+  const triggerLogout = () => {
+    logout({ returnTo: window.location.origin });
+  };
 
   const [trips, setTrips] = useState(getLocalStorage());
   return (
     <dataContext.Provider value={trips}>
-      <button onClick={loginWithRedirect}>LOGIN</button>
-      <button onClick={() => logout({ returnTo: window.location.origin })}>
-        Log Out
-      </button>
+      {/* <button onClick={loginWithRedirect}>LOGIN</button> */}
       <div className="container">
         <main>
           <div className="main__container">
@@ -37,7 +37,7 @@ const Dashboard = () => {
             <Chart />
           </div>
         </main>
-        <Sidebar {...obj} />
+        <Sidebar {...obj} triggerLogout={triggerLogout} />
       </div>
     </dataContext.Provider>
   );

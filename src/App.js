@@ -6,6 +6,7 @@ import Trips from "./pages/Tripslist";
 import { Auth0Provider } from "@auth0/auth0-react";
 import PrivateRoute from "./pages/PrivateRoute";
 import AuthWrapper from "./pages/AuthWrapper";
+import Planning from "./pages/Planning";
 
 function App() {
   return (
@@ -18,9 +19,10 @@ function App() {
           <Route path="/login">
             <Login />
           </Route>
-          <Route path="/trips">
+          <Route path="/trips" exact={true}>
             <Trips />
           </Route>
+          <Route path="/trips/:id" children={<Planning />} exact={true} />
           <Route path="*">
             <Error />
           </Route>

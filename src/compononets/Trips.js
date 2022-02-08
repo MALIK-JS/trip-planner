@@ -1,4 +1,5 @@
 import React, { useEffect } from "react";
+import { Link } from "react-router-dom";
 
 function Trips({
   id,
@@ -20,9 +21,7 @@ function Trips({
       </div>
       <img className="trip__img" src={destfalg} />
       <div className="trip__data">
-        <p className="trip__row">
-          {`FROM :${godate} TO:${backdate}`}
-        </p>
+        <p className="trip__row">{`FROM :${godate} TO:${backdate}`}</p>
         <p className="trip__row">
           The place that you're going to they speak {language}
         </p>
@@ -43,7 +42,9 @@ function Trips({
         >
           DELETE
         </button>
-        <button className="btn btn__info">PLANNING</button>
+        <Link to={`/trips/${id}`} >
+          <button className="btn btn__info">PLANNING</button>
+        </Link>
       </div>
     </article>
   );

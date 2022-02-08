@@ -30,7 +30,7 @@ const Tripslist = () => {
     setIsEditing({ value: true, item: specificItem });
   };
 
-  const obj = { id : 1, value:"active_menu_link" };
+  const hoverSelected = { id : 1, value:"active_menu_link" };
   return (
     <div className="container">
       <main>
@@ -53,7 +53,7 @@ const Tripslist = () => {
         </section>
       </main>
 
-      <Sidebar {...obj} />
+      <Sidebar {...hoverSelected} />
     </div>
   );
 };
