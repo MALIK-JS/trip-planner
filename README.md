@@ -1,3 +1,15 @@
+THIS A PROJECT IS AN ASSIGNMENT IN A BOOTCAMP THAT I'M ATTENDING CALLED PER SCHOLAS (IT'S FREE)
+
+TRIP PLANNER
+
+It's a web aplication made using REACT JS It helps people to plan for the trips as well as have an overview of their spending during trip.
+
+I use auth0 (https://auth0.com/) for the authentification and I used localStorage fro saving data and Chart JS for drawing Charts.
+
+If you're trying to either coontribute or tes the Appliocation you just need to download it and open using your favorite editor and run npm install to install required packages then npm start.
+
+I left my auth info in the application and I didn't setup them as env variable to just save you some headache while trying the app
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
