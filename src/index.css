@@ -256,7 +256,7 @@ main {
     grid-template-areas: "main";
   }
 
-  #sidebar {
+  .sidebar {
     display: none;
   }
 
