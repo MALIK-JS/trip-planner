@@ -37,6 +37,7 @@ export const options = {
 function Chart() {
 
   const allInputs = useContext(dataContext)
+  
   const lastInput = allInputs.at(-1);
   const labels = allInputs.map((country) => country.to);
   const data = {

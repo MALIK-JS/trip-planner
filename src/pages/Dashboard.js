@@ -10,15 +10,14 @@ const getLocalStorage = () => {
   if (list) {
     return JSON.parse(localStorage.getItem("list"));
   } else {
-    return [];
+    return [{ from: "none", to: "none", godate: 0, backdate: 0, budget: 0 }];
   }
 };
 
 export const dataContext = React.createContext();
 const obj = { id: 0, value: "active_menu_link" };
 const Dashboard = () => {
-  const { isAuthenticated, logout, user } =
-    useAuth0();
+  const { isAuthenticated, logout, user } = useAuth0();
   const isUser = isAuthenticated && user;
 
   const triggerLogout = () => {
